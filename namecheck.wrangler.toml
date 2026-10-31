@@ -1,0 +1,11 @@
+# Repo: linngamestore/namecheck   (put this file next to your .js as wrangler.toml)
+name = "namecheck"                  # MUST equal the Worker name in the dashboard (namecheck.resell-program-system.workers.dev)
+main = "namecheck.js"               # <- your file name in the repo
+compatibility_date = "2025-09-01"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[[kv_namespaces]]
+binding = "STATE"
+id = "931bb814d35844b1b8f5f2ecd23a2da8"   # Dashboard -> Storage & Databases -> KV -> the namespace used by this Worker -> copy its ID
